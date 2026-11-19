@@ -1,22 +1,22 @@
 /**
- * Customize your portfolio here.
- * Set `githubUsername` to your GitHub handle to automatically load your profile and repositories.
- * You can also preview any GitHub user via `?user=username` in the URL or the GitHub icon in the navbar.
+ * Portfolio Configuration
+ * Update these fields to customize your personal portfolio.
+ * You can also preview any GitHub profile by appending ?user=username to the URL.
  */
 const PORTFOLIO_CONFIG = {
   githubUsername: "iakwebtech",
-  brandName: "Iak Webtech Solution",
+  brandName: "iakwebtech",
   role: "Full-Stack Developer & Open Source Contributor",
   availability: "Available for new opportunities",
-  email: "imtiazalam6701@Gmail.com",
+  email: "hello@iakwebtech.com",
   skills: [
-    "PHP & Laravel","VueJs","CodeIgniter",
     "JavaScript / TypeScript",
     "React & Next.js",
     "Node.js",
     "Python",
+    "PHP & Laravel",
     "HTML5 & CSS3",
-    "PostgreSQL",
+    "PostgreSQL & MySQL",
     "Docker",
     "Git & GitHub Actions",
     "REST & GraphQL",
@@ -33,14 +33,14 @@ const PORTFOLIO_CONFIG = {
       role: "Senior Software Engineer",
       org: "Open Source & Independent Consulting",
       summary:
-        "Architecting modern web applications, developer tools, and automated workflows with a focus on performance and maintainability.",
+        "Architecting modern web applications, developer tools, and automated workflows with a focus on performance, security, and maintainability.",
     },
     {
       period: "2022 — 2024",
       role: "Full-Stack Developer",
       org: "Tech Studio",
       summary:
-        "Built customer-facing dashboards and APIs serving thousands of daily active users, reducing page load times and improving test coverage.",
+        "Built customer-facing dashboards and APIs serving thousands of daily active users, improving Core Web Vitals and automated test coverage.",
     },
     {
       period: "2020 — 2022",
@@ -52,7 +52,8 @@ const PORTFOLIO_CONFIG = {
   ],
   socials: [
     { label: "GitHub", url: "https://github.com/iakwebtech" },
-    { label: "LinkedIn", url: "https://linkedin.com/iakweb" },
+    { label: "LinkedIn", url: "https://linkedin.com" },
+    { label: "X / Twitter", url: "https://x.com" },
     { label: "Website", url: "https://iakwebtech.com" },
   ],
   maxRepos: 9,
@@ -83,6 +84,7 @@ const state = {
   repos: [],
   activeLanguage: "All",
   searchQuery: "",
+  sortBy: "stars",
 };
 
 const $ = (id) => document.getElementById(id);
@@ -99,6 +101,40 @@ function initTheme() {
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("portfolio_theme", next);
   });
+}
+
+function initScrollEffects() {
+  const progressBar = $("scrollProgress");
+  let ticking = false;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+        progressBar.style.width = `${pct}%`;
+        ticking = false;
+      });
+    },
+    { passive: true }
+  );
+
+  const revealEls = document.querySelectorAll(".reveal");
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.1 }
+  );
+  revealEls.forEach((el) => revealObserver.observe(el));
 }
 
 function initNavigation() {
@@ -153,16 +189,15 @@ function renderStaticSections() {
     }, 3000);
   });
 
-  const focusList = $("focusList");
-  focusList.innerHTML = PORTFOLIO_CONFIG.focusAreas.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+  $("focusList").innerHTML = PORTFOLIO_CONFIG.focusAreas
+    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .join("");
 
-  const skillsGrid = $("skillsGrid");
-  skillsGrid.innerHTML = PORTFOLIO_CONFIG.skills
+  $("skillsGrid").innerHTML = PORTFOLIO_CONFIG.skills
     .map((skill) => `<span class="skill-chip">${escapeHtml(skill)}</span>`)
     .join("");
 
-  const timeline = $("experienceTimeline");
-  timeline.innerHTML = PORTFOLIO_CONFIG.experience
+  $("experienceTimeline").innerHTML = PORTFOLIO_CONFIG.experience
     .map(
       (item) => `
       <article class="timeline-item">
@@ -203,12 +238,12 @@ function formatNumber(num) {
   return String(num);
 }
 
-function readCache(username) {
+function readCache(username, allowStale = false) {
   try {
     const raw = localStorage.getItem(`gh_portfolio_${username.toLowerCase()}`);
     if (!raw) return null;
     const parsed = JSON.parse(raw);
-    if (Date.now() - parsed.timestamp > CACHE_TTL_MS) return null;
+    if (!allowStale && Date.now() - parsed.timestamp > CACHE_TTL_MS) return null;
     return parsed.data;
   } catch {
     return null;
@@ -230,25 +265,31 @@ async function fetchGitHubData(username) {
   const cached = readCache(username);
   if (cached) return cached;
 
-  const [userRes, reposRes] = await Promise.all([
-    fetch(`https://api.github.com/users/${encodeURIComponent(username)}`),
-    fetch(`https://api.github.com/users/${encodeURIComponent(username)}/repos?sort=updated&per_page=100`),
-  ]);
+  try {
+    const [userRes, reposRes] = await Promise.all([
+      fetch(`https://api.github.com/users/${encodeURIComponent(username)}`),
+      fetch(`https://api.github.com/users/${encodeURIComponent(username)}/repos?sort=updated&per_page=100`),
+    ]);
 
-  if (!userRes.ok) {
-    throw new Error(
-      userRes.status === 404
-        ? `GitHub user "${username}" was not found.`
-        : `GitHub API returned status ${userRes.status}.`
-    );
+    if (!userRes.ok) {
+      throw new Error(
+        userRes.status === 404
+          ? `GitHub user "${username}" was not found.`
+          : `GitHub API returned status ${userRes.status}.`
+      );
+    }
+
+    const user = await userRes.json();
+    const repos = reposRes.ok ? await reposRes.json() : [];
+
+    const data = { user, repos };
+    writeCache(username, data);
+    return data;
+  } catch (err) {
+    const stale = readCache(username, true);
+    if (stale) return stale;
+    throw err;
   }
-
-  const user = await userRes.json();
-  const repos = reposRes.ok ? await reposRes.json() : [];
-
-  const data = { user, repos };
-  writeCache(username, data);
-  return data;
 }
 
 function updateProfileUI(user, repos) {
@@ -261,6 +302,7 @@ function updateProfileUI(user, repos) {
   $("heroAvatar").src = user.avatar_url;
   $("heroAvatar").alt = `${displayName} GitHub avatar`;
   $("heroGithubLink").href = user.html_url;
+  $("viewAllReposBtn").href = `${user.html_url}?tab=repositories`;
   $("locationText").textContent = user.location || "Remote / Worldwide";
 
   if (user.bio) {
@@ -272,7 +314,6 @@ function updateProfileUI(user, repos) {
   $("statFollowers").textContent = formatNumber(user.followers ?? 0);
   $("statStars").textContent = formatNumber(totalStars);
 
-  // Update GitHub social link to match loaded user
   const updatedSocials = PORTFOLIO_CONFIG.socials.map((s) =>
     s.label.toLowerCase() === "github" ? { ...s, url: user.html_url } : s
   );
@@ -283,7 +324,6 @@ function updateProfileUI(user, repos) {
   }
   renderSocialLinks(updatedSocials);
 
-  // Top languages summary
   const langCounts = {};
   repos.forEach((r) => {
     if (!r.fork && r.language) {
@@ -303,7 +343,7 @@ function updateProfileUI(user, repos) {
 function buildLanguageFilters(repos) {
   const langs = new Set(["All"]);
   repos.forEach((r) => {
-    if (r.language) langs.add(r.language);
+    if (!r.fork && r.language) langs.add(r.language);
   });
 
   const container = $("languageFilters");
@@ -327,6 +367,13 @@ function buildLanguageFilters(repos) {
   });
 }
 
+function showSkeletons(count = 6) {
+  $("projectsStatus").hidden = true;
+  $("projectsGrid").innerHTML = Array.from({ length: count })
+    .map(() => `<div class="skeleton-card" aria-hidden="true"></div>`)
+    .join("");
+}
+
 function renderRepos() {
   const grid = $("projectsGrid");
   const status = $("projectsStatus");
@@ -339,10 +386,16 @@ function renderRepos() {
       const q = state.searchQuery.toLowerCase();
       return (
         repo.name.toLowerCase().includes(q) ||
-        (repo.description || "").toLowerCase().includes(q)
+        (repo.description || "").toLowerCase().includes(q) ||
+        (repo.topics || []).some((t) => t.toLowerCase().includes(q))
       );
     })
-    .sort((a, b) => b.stargazers_count - a.stargazers_count || new Date(b.pushed_at) - new Date(a.pushed_at))
+    .sort((a, b) => {
+      if (state.sortBy === "updated") {
+        return new Date(b.pushed_at) - new Date(a.pushed_at);
+      }
+      return b.stargazers_count - a.stargazers_count || new Date(b.pushed_at) - new Date(a.pushed_at);
+    })
     .slice(0, PORTFOLIO_CONFIG.maxRepos);
 
   if (filtered.length === 0) {
@@ -360,6 +413,14 @@ function renderRepos() {
         year: "numeric",
         month: "short",
       });
+      const topicsHtml = (repo.topics || [])
+        .slice(0, 3)
+        .map((t) => `<span class="topic-tag">${escapeHtml(t)}</span>`)
+        .join("");
+
+      const liveUrl =
+        repo.homepage && /^https?:\/\//i.test(repo.homepage.trim()) ? repo.homepage.trim() : "";
+
       return `
       <article class="repo-card">
         <div>
@@ -372,16 +433,23 @@ function renderRepos() {
             <span class="repo-badge">${escapeHtml(updated)}</span>
           </div>
           <p class="repo-desc">${escapeHtml(repo.description || "No description provided.")}</p>
+          ${topicsHtml ? `<div class="repo-topics">${topicsHtml}</div>` : ""}
         </div>
 
-        <div class="repo-meta">
-          <span class="repo-lang">
-            <span class="lang-dot" style="background: ${langColor}"></span>
-            <span>${escapeHtml(repo.language || "Markdown")}</span>
-          </span>
-          <div class="repo-counts">
-            <span class="repo-count" title="Stars">&#9733; ${formatNumber(repo.stargazers_count)}</span>
-            <span class="repo-count" title="Forks">&#9906; ${formatNumber(repo.forks_count)}</span>
+        <div>
+          <div class="repo-links">
+            <a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noopener noreferrer" class="repo-link">Source Code &nearr;</a>
+            ${liveUrl ? `<a href="${escapeHtml(liveUrl)}" target="_blank" rel="noopener noreferrer" class="repo-link">Live Demo &nearr;</a>` : ""}
+          </div>
+          <div class="repo-meta">
+            <span class="repo-lang">
+              <span class="lang-dot" style="background: ${langColor}"></span>
+              <span>${escapeHtml(repo.language || "Markdown")}</span>
+            </span>
+            <div class="repo-counts">
+              <span class="repo-count" title="Stars">&#9733; ${formatNumber(repo.stargazers_count)}</span>
+              <span class="repo-count" title="Forks">&#9906; ${formatNumber(repo.forks_count)}</span>
+            </div>
           </div>
         </div>
       </article>`;
@@ -390,9 +458,7 @@ function renderRepos() {
 }
 
 async function loadGitHubProfile(username) {
-  const status = $("projectsStatus");
-  status.hidden = false;
-  status.textContent = `Loading GitHub profile for @${username}...`;
+  showSkeletons(6);
 
   try {
     const { user, repos } = await fetchGitHubData(username);
@@ -404,49 +470,31 @@ async function loadGitHubProfile(username) {
     buildLanguageFilters(repos);
     renderRepos();
   } catch (err) {
+    const status = $("projectsStatus");
     status.hidden = false;
-    status.textContent = `${err.message} You can still customize the portfolio in script.js.`;
+    status.textContent = `${err.message} Check your connection or visit GitHub directly.`;
     $("projectsGrid").innerHTML = "";
   }
 }
 
-function initModalAndSearch() {
-  const modal = $("userModal");
-  const input = $("usernameInput");
-
-  $("switchUserBtn").addEventListener("click", () => {
-    input.value = state.username;
-    modal.hidden = false;
-    input.focus();
-  });
-
-  $("closeModalBtn").addEventListener("click", () => {
-    modal.hidden = true;
-  });
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.hidden = true;
-  });
-
-  $("usernameForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const nextUser = input.value.trim();
-    if (!nextUser) return;
-    modal.hidden = true;
-    loadGitHubProfile(nextUser);
-  });
-
+function initProjectControls() {
   $("repoSearch").addEventListener("input", (e) => {
     state.searchQuery = e.target.value.trim();
+    renderRepos();
+  });
+
+  $("repoSort").addEventListener("change", (e) => {
+    state.sortBy = e.target.value;
     renderRepos();
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
+  initScrollEffects();
   initNavigation();
   renderStaticSections();
-  initModalAndSearch();
+  initProjectControls();
 
   const params = new URLSearchParams(window.location.search);
   const queryUser = params.get("user");
