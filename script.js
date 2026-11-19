@@ -4,12 +4,13 @@
  * You can also preview any GitHub user via `?user=username` in the URL or the GitHub icon in the navbar.
  */
 const PORTFOLIO_CONFIG = {
-  githubUsername: "iakwebtech",
-  brandName: "Iak WebTech Solution",
+  githubUsername: "Imtiaz Alam Khan",
+  brandName: "Iak Webtech Solution",
   role: "Full-Stack Developer & Open Source Contributor",
   availability: "Available for new opportunities",
-  email: "hello@example.com",
+  email: "imtiazalam6701@Gmail.com",
   skills: [
+    "PHP & Laravel","VueJs","CodeIgniter",
     "JavaScript / TypeScript",
     "React & Next.js",
     "Node.js",
