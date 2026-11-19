@@ -4,7 +4,7 @@
  * You can also preview any GitHub user via `?user=username` in the URL or the GitHub icon in the navbar.
  */
 const PORTFOLIO_CONFIG = {
-  githubUsername: "Imtiaz Alam Khan",
+  githubUsername: "iakwebtech",
   brandName: "Iak Webtech Solution",
   role: "Full-Stack Developer & Open Source Contributor",
   availability: "Available for new opportunities",
