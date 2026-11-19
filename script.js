@@ -4,8 +4,8 @@
  * You can also preview any GitHub user via `?user=username` in the URL or the GitHub icon in the navbar.
  */
 const PORTFOLIO_CONFIG = {
-  githubUsername: "octocat",
-  brandName: "dev.portfolio",
+  githubUsername: "iakwebtech",
+  brandName: "Iak WebTech Solution",
   role: "Full-Stack Developer & Open Source Contributor",
   availability: "Available for new opportunities",
   email: "hello@example.com",
@@ -50,10 +50,9 @@ const PORTFOLIO_CONFIG = {
     },
   ],
   socials: [
-    { label: "GitHub", url: "https://github.com/octocat" },
-    { label: "LinkedIn", url: "https://linkedin.com" },
-    { label: "X / Twitter", url: "https://x.com" },
-    { label: "Website", url: "https://github.com" },
+    { label: "GitHub", url: "https://github.com/iakwebtech" },
+    { label: "LinkedIn", url: "https://linkedin.com/iakweb" },
+    { label: "Website", url: "https://iakwebtech.com" },
   ],
   maxRepos: 9,
 };
