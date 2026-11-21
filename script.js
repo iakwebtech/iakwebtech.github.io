@@ -5,76 +5,237 @@
  */
 const PORTFOLIO_CONFIG = {
   githubUsername: "iakwebtech",
+  fullName: "Imtiaz Alam Khan",
   brandName: "iakwebtech",
-  role: "Full-Stack Developer & Open Source Contributor",
-  availability: "Available for new opportunities",
-  email: "hello@iakwebtech.com",
-  skills: [
-    "JavaScript / TypeScript",
-    "React & Next.js",
-    "Node.js",
-    "Python",
-    "PHP & Laravel",
-    "HTML5 & CSS3",
-    "PostgreSQL & MySQL",
-    "Docker",
-    "Git & GitHub Actions",
-    "REST & GraphQL",
-  ],
-  focusAreas: [
-    "Building responsive, accessible web interfaces with clean UI/UX",
-    "Designing reliable REST & GraphQL APIs and scalable backends",
-    "Writing automated tests, CI/CD workflows, and developer tooling",
-    "Contributing to open-source communities on GitHub",
-  ],
-  experience: [
+  role: "Full Stack Web Developer | PHP & Laravel Specialist",
+  availability: "12+ Years Experience • Available for Projects",
+  email: "imtiazalam6701@gmail.com",
+  phone: "917003578764",
+  website: "https://iakwebtech.com",
+  location: "Kolkata, West Bengal, India",
+
+  skillCategories: [
     {
-      period: "2024 — Present",
-      role: "Senior Software Engineer",
-      org: "Open Source & Independent Consulting",
-      summary:
-        "Architecting modern web applications, developer tools, and automated workflows with a focus on performance, security, and maintainability.",
+      title: "Backend Development",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg>`,
+      skills: ["PHP", "Laravel", "CodeIgniter", "RESTful API Development"],
     },
     {
-      period: "2022 — 2024",
-      role: "Full-Stack Developer",
-      org: "Tech Studio",
-      summary:
-        "Built customer-facing dashboards and APIs serving thousands of daily active users, improving Core Web Vitals and automated test coverage.",
+      title: "Frontend Development",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+      skills: ["HTML5", "CSS3", "JavaScript", "jQuery", "AJAX", "Vue.js", "React.js"],
     },
     {
-      period: "2020 — 2022",
-      role: "Frontend Engineer",
-      org: "Digital Agency",
-      summary:
-        "Delivered responsive websites, design systems, and interactive web experiences for startups and enterprise clients.",
+      title: "Database & Development Tools",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>`,
+      skills: ["MySQL", "Git", "GitHub", "API Integration"],
+    },
+    {
+      title: "Specialized Development",
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+      skills: [
+        "E-commerce Development",
+        "School ERP Systems",
+        "SaaS Application Development",
+        "SMS Portal Development",
+        "Payment Gateway Integration",
+        "Third-Party API Integration",
+        "AI-Powered Applications",
+        "Business Management Systems",
+      ],
     },
   ],
+
+  services: [
+    {
+      title: "Custom Web Application Development",
+      desc: "Tailored, scalable web applications engineered around your exact business workflows and operational goals.",
+    },
+    {
+      title: "PHP & Laravel Development",
+      desc: "Clean, maintainable MVC architectures, queues, authentication, and high-performance Laravel backends.",
+    },
+    {
+      title: "CodeIgniter Development",
+      desc: "Lightweight, fast, and reliable CodeIgniter applications, upgrades, and legacy system modernization.",
+    },
+    {
+      title: "Vue.js & React.js Development",
+      desc: "Interactive single-page applications, reactive dashboards, and modern component-driven user interfaces.",
+    },
+    {
+      title: "E-commerce Website Development",
+      desc: "Complete online stores with product variations, inventory tracking, checkout flows, and order management.",
+    },
+    {
+      title: "School ERP Development",
+      desc: "End-to-end academic management portals covering admissions, attendance, exams, fees, and parent communication.",
+    },
+    {
+      title: "SaaS Application Development",
+      desc: "Multi-tenant SaaS platforms with subscription billing, role-based access control, and analytics.",
+    },
+    {
+      title: "RESTful API Development",
+      desc: "Secure, versioned, well-documented APIs powering web apps, mobile apps, and external partner integrations.",
+    },
+    {
+      title: "Payment Gateway Integration",
+      desc: "Reliable online payment processing, webhook callback verification, refunds, and transaction reporting.",
+    },
+    {
+      title: "POS & Inventory Management",
+      desc: "Point-of-sale billing, barcode workflows, stock alerts, purchase tracking, and printable invoices.",
+    },
+    {
+      title: "AI Application Integration",
+      desc: "Practical AI-powered web tools, prompt workflows, and intelligent automation using modern AI APIs.",
+    },
+    {
+      title: "Website Maintenance & Support",
+      desc: "Ongoing performance tuning, security patching, bug resolution, database optimization, and feature updates.",
+    },
+  ],
+
+  solutions: [
+    {
+      category: "Education ERP",
+      title: "School ERP Management System",
+      features: [
+        "Student, teacher, and staff management",
+        "Attendance and examination management",
+        "Fee collection and invoice management",
+        "Parent and student portals",
+        "SMS notifications and reporting",
+        "Multi-school management capabilities",
+      ],
+      stack: ["PHP", "Laravel", "MySQL", "Vue.js", "REST API"],
+    },
+    {
+      category: "E-Commerce",
+      title: "E-commerce Platform",
+      features: [
+        "Product and category management",
+        "Product variations and inventory control",
+        "Shopping cart and checkout flow",
+        "Payment gateway integration",
+        "Order and delivery management",
+        "Admin dashboard and sales reports",
+      ],
+      stack: ["Laravel", "MySQL", "JavaScript", "AJAX", "Payment APIs"],
+    },
+    {
+      category: "Cloud SaaS",
+      title: "SaaS Application Architecture",
+      features: [
+        "Multi-tenant architecture",
+        "Subscription and user management",
+        "Role-based access control (RBAC)",
+        "Multiple business/account management",
+        "Dashboard and analytics",
+        "RESTful API integration",
+      ],
+      stack: ["Laravel", "Vue.js", "React.js", "MySQL", "REST API"],
+    },
+    {
+      category: "Retail & Billing",
+      title: "POS & Inventory Management System",
+      features: [
+        "Fast Point of Sale billing",
+        "Product and stock management",
+        "Barcode support",
+        "Invoice and receipt printing",
+        "Sales and purchase management",
+        "Detailed inventory reports",
+      ],
+      stack: ["PHP", "CodeIgniter", "MySQL", "jQuery", "AJAX"],
+    },
+    {
+      category: "Messaging",
+      title: "SMS Portal Platform",
+      features: [
+        "Bulk SMS campaign management",
+        "Contact and group management",
+        "SMS campaign scheduling",
+        "Real-time delivery status tracking",
+        "API-based SMS gateway integration",
+      ],
+      stack: ["PHP", "Laravel", "MySQL", "Gateway APIs"],
+    },
+    {
+      category: "FinTech Integration",
+      title: "Payment Gateway Integration",
+      features: [
+        "Secure online payment integration",
+        "Verified transaction handling",
+        "Webhook & payment callback management",
+        "Transaction history and reporting",
+        "E-commerce and POS payment support",
+      ],
+      stack: ["PHP", "Laravel", "REST APIs", "Webhooks"],
+    },
+    {
+      category: "AI Automation",
+      title: "AI-Powered Web Applications",
+      features: [
+        "AI-enabled web workflows",
+        "AI prompt management platform",
+        "Third-party AI API integrations",
+        "Intelligent business process automation",
+      ],
+      stack: ["Laravel", "React.js", "Vue.js", "AI APIs"],
+    },
+  ],
+
+  experienceStrengths: [
+    {
+      title: "12+ Years of Development Experience",
+      desc: "Over a decade of hands-on full-stack software engineering, architecture design, and production maintenance.",
+    },
+    {
+      title: "Full Stack Web Application Development",
+      desc: "Seamless integration between robust PHP/Laravel/CodeIgniter backends and responsive JS/Vue/React frontends.",
+    },
+    {
+      title: "Custom ERP & CRM Solutions",
+      desc: "Building multi-module School ERPs, staff portals, and custom CRM systems tailored to organizational processes.",
+    },
+    {
+      title: "E-commerce & SaaS Development",
+      desc: "Designing multi-tenant SaaS platforms, subscription workflows, and scalable online storefronts.",
+    },
+    {
+      title: "Payment Gateway & API Integrations",
+      desc: "Connecting payment processors, SMS gateways, shipping providers, and third-party REST APIs securely.",
+    },
+    {
+      title: "Database Design & Optimization",
+      desc: "Structuring normalized MySQL schemas, indexing strategies, and query optimization for high-volume data.",
+    },
+    {
+      title: "Business Process Automation",
+      desc: "Eliminating manual spreadsheets and repetitive tasks with automated billing, reporting, and notifications.",
+    },
+  ],
+
   socials: [
     { label: "GitHub", url: "https://github.com/iakwebtech" },
-    { label: "LinkedIn", url: "https://linkedin.com" },
-    { label: "X / Twitter", url: "https://x.com" },
+    { label: "WhatsApp", url: "https://wa.me/917003578764" },
     { label: "Website", url: "https://iakwebtech.com" },
+    { label: "Email", url: "mailto:imtiazalam6701@gmail.com" },
   ],
   maxRepos: 9,
 };
 
 const LANG_COLORS = {
+  PHP: "#4F5D95",
   JavaScript: "#f1e05a",
   TypeScript: "#3178c6",
   Python: "#3572A5",
   HTML: "#e34c26",
   CSS: "#563d7c",
-  PHP: "#4F5D95",
-  Go: "#00ADD8",
-  Rust: "#dea584",
-  Java: "#b07219",
-  "C#": "#178600",
-  "C++": "#f34b7d",
-  Ruby: "#701516",
-  Shell: "#89e051",
   Vue: "#41b883",
-  Dart: "#00B4AB",
+  Shell: "#89e051",
 };
 
 const CACHE_TTL_MS = 15 * 60 * 1000;
@@ -88,6 +249,20 @@ const state = {
 };
 
 const $ = (id) => document.getElementById(id);
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function formatNumber(num) {
+  if (num >= 1000) return `${(num / 1000).toFixed(1).replace(/\.0$/, "")}k`;
+  return String(num);
+}
 
 function initTheme() {
   const saved = localStorage.getItem("portfolio_theme");
@@ -132,7 +307,7 @@ function initScrollEffects() {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.08 }
   );
   revealEls.forEach((el) => revealObserver.observe(el));
 }
@@ -164,19 +339,19 @@ function initNavigation() {
         });
       });
     },
-    { rootMargin: "-40% 0px -50% 0px" }
+    { rootMargin: "-35% 0px -55% 0px" }
   );
 
   sections.forEach((sec) => observer.observe(sec));
 }
 
 function renderStaticSections() {
-  $("brandName").textContent = PORTFOLIO_CONFIG.brandName;
-  $("heroRole").textContent = PORTFOLIO_CONFIG.role;
-  $("availabilityText").textContent = PORTFOLIO_CONFIG.availability;
   $("footerYear").textContent = new Date().getFullYear();
 
-  $("contactEmailBtn").href = `mailto:${PORTFOLIO_CONFIG.email}`;
+  $("downloadResumeBtn").addEventListener("click", () => {
+    window.print();
+  });
+
   $("copyEmailBtn").addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(PORTFOLIO_CONFIG.email);
@@ -189,31 +364,85 @@ function renderStaticSections() {
     }, 3000);
   });
 
-  $("focusList").innerHTML = PORTFOLIO_CONFIG.focusAreas
-    .map((item) => `<li>${escapeHtml(item)}</li>`)
-    .join("");
-
-  $("skillsGrid").innerHTML = PORTFOLIO_CONFIG.skills
-    .map((skill) => `<span class="skill-chip">${escapeHtml(skill)}</span>`)
-    .join("");
-
-  $("experienceTimeline").innerHTML = PORTFOLIO_CONFIG.experience
+  // Render Skill Categories
+  $("skillsCategoriesGrid").innerHTML = PORTFOLIO_CONFIG.skillCategories
     .map(
-      (item) => `
-      <article class="timeline-item">
-        <div class="timeline-period">${escapeHtml(item.period)}</div>
-        <h3 class="timeline-role">${escapeHtml(item.role)}</h3>
-        <div class="timeline-org">${escapeHtml(item.org)}</div>
-        <p class="timeline-summary">${escapeHtml(item.summary)}</p>
+      (cat) => `
+      <article class="skill-category-card">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon" aria-hidden="true">${cat.icon}</span>
+          <h3>${escapeHtml(cat.title)}</h3>
+        </div>
+        <div class="skills-grid">
+          ${cat.skills.map((skill) => `<span class="skill-chip">${escapeHtml(skill)}</span>`).join("")}
+        </div>
       </article>`
     )
     .join("");
 
-  renderSocialLinks(PORTFOLIO_CONFIG.socials);
-}
+  // Render Services
+  $("servicesGrid").innerHTML = PORTFOLIO_CONFIG.services
+    .map(
+      (srv, idx) => `
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <span style="font-family: var(--font-mono); font-weight: 700; font-size: 0.9rem;">${String(idx + 1).padStart(2, "0")}</span>
+        </div>
+        <h3>${escapeHtml(srv.title)}</h3>
+        <p>${escapeHtml(srv.desc)}</p>
+      </article>`
+    )
+    .join("");
 
-function renderSocialLinks(socials) {
-  $("socialLinks").innerHTML = socials
+  // Render Solution Categories
+  $("solutionsGrid").innerHTML = PORTFOLIO_CONFIG.solutions
+    .map(
+      (sol) => `
+      <article class="solution-card">
+        <div>
+          <span class="solution-badge">${escapeHtml(sol.category)}</span>
+          <h3>${escapeHtml(sol.title)}</h3>
+          <ul class="solution-features">
+            ${sol.features.map((f) => `<li>${escapeHtml(f)}</li>`).join("")}
+          </ul>
+        </div>
+        <div>
+          <div class="solution-stack">
+            ${sol.stack.map((tech) => `<span class="topic-tag">${escapeHtml(tech)}</span>`).join("")}
+          </div>
+          <div class="solution-footer">
+            <a href="#contact" class="repo-link inquire-solution" data-subject="${escapeHtml(sol.title)}">
+              Discuss Similar Project &rarr;
+            </a>
+          </div>
+        </div>
+      </article>`
+    )
+    .join("");
+
+  document.querySelectorAll(".inquire-solution").forEach((link) => {
+    link.addEventListener("click", () => {
+      const subjectInput = $("contactSubject");
+      if (subjectInput) {
+        subjectInput.value = `Inquiry: ${link.dataset.subject}`;
+      }
+    });
+  });
+
+  // Render Experience Strengths
+  $("experienceGrid").innerHTML = PORTFOLIO_CONFIG.experienceStrengths
+    .map(
+      (exp, idx) => `
+      <article class="experience-card">
+        <div class="experience-num">${String(idx + 1).padStart(2, "0")}</div>
+        <h3>${escapeHtml(exp.title)}</h3>
+        <p>${escapeHtml(exp.desc)}</p>
+      </article>`
+    )
+    .join("");
+
+  // Render Social Links
+  $("socialLinks").innerHTML = PORTFOLIO_CONFIG.socials
     .map(
       (s) => `
       <a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer" class="social-link">
@@ -222,20 +451,14 @@ function renderSocialLinks(socials) {
       </a>`
     )
     .join("");
-}
 
-function escapeHtml(value) {
-  return String(value ?? "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
-
-function formatNumber(num) {
-  if (num >= 1000) return `${(num / 1000).toFixed(1).replace(/\.0$/, "")}k`;
-  return String(num);
+  // Graceful fallback if GitHub contribution chart image fails
+  const chartImg = $("githubChartImg");
+  if (chartImg) {
+    chartImg.addEventListener("error", () => {
+      $("githubChartWrap").innerHTML = `<p class="section-desc">Contribution graph unavailable right now. View full activity directly on <a href="https://github.com/${escapeHtml(state.username)}" target="_blank" rel="noopener noreferrer" class="repo-link">GitHub &nearr;</a>.</p>`;
+    });
+  }
 }
 
 function readCache(username, allowStale = false) {
@@ -273,8 +496,8 @@ async function fetchGitHubData(username) {
 
     if (!userRes.ok) {
       throw new Error(
-        userRes.status === 404
-          ? `GitHub user "${username}" was not found.`
+        userRes.status === 403
+          ? "GitHub API rate limit reached temporarily."
           : `GitHub API returned status ${userRes.status}.`
       );
     }
@@ -293,51 +516,20 @@ async function fetchGitHubData(username) {
 }
 
 function updateProfileUI(user, repos) {
-  const displayName = user.name || user.login;
-  document.title = `${displayName} — Developer Portfolio`;
-
-  $("heroName").textContent = displayName;
-  $("footerName").textContent = displayName;
+  if (
+    user.avatar_url &&
+    user.login.toLowerCase() !== PORTFOLIO_CONFIG.githubUsername.toLowerCase()
+  ) {
+    $("heroAvatar").src = user.avatar_url;
+  }
   $("heroHandle").textContent = `@${user.login}`;
-  $("heroAvatar").src = user.avatar_url;
-  $("heroAvatar").alt = `${displayName} GitHub avatar`;
   $("heroGithubLink").href = user.html_url;
   $("viewAllReposBtn").href = `${user.html_url}?tab=repositories`;
-  $("locationText").textContent = user.location || "Remote / Worldwide";
-
-  if (user.bio) {
-    $("heroBio").textContent = user.bio;
-  }
 
   const totalStars = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
   $("statRepos").textContent = formatNumber(user.public_repos ?? repos.length);
   $("statFollowers").textContent = formatNumber(user.followers ?? 0);
   $("statStars").textContent = formatNumber(totalStars);
-
-  const updatedSocials = PORTFOLIO_CONFIG.socials.map((s) =>
-    s.label.toLowerCase() === "github" ? { ...s, url: user.html_url } : s
-  );
-  if (user.blog) {
-    const blogUrl = user.blog.startsWith("http") ? user.blog : `https://${user.blog}`;
-    const idx = updatedSocials.findIndex((s) => s.label.toLowerCase() === "website");
-    if (idx >= 0) updatedSocials[idx] = { label: "Website", url: blogUrl };
-  }
-  renderSocialLinks(updatedSocials);
-
-  const langCounts = {};
-  repos.forEach((r) => {
-    if (!r.fork && r.language) {
-      langCounts[r.language] = (langCounts[r.language] || 0) + 1;
-    }
-  });
-  const topLangs = Object.entries(langCounts)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 4)
-    .map(([lang]) => lang);
-
-  $("topLanguages").innerHTML = topLangs
-    .map((lang) => `<span class="skill-chip">${escapeHtml(lang)}</span>`)
-    .join("");
 }
 
 function buildLanguageFilters(repos) {
@@ -347,6 +539,11 @@ function buildLanguageFilters(repos) {
   });
 
   const container = $("languageFilters");
+  if (langs.size <= 1) {
+    container.innerHTML = "";
+    return;
+  }
+
   container.innerHTML = Array.from(langs)
     .slice(0, 8)
     .map(
@@ -367,7 +564,7 @@ function buildLanguageFilters(repos) {
   });
 }
 
-function showSkeletons(count = 6) {
+function showSkeletons(count = 3) {
   $("projectsStatus").hidden = true;
   $("projectsGrid").innerHTML = Array.from({ length: count })
     .map(() => `<div class="skeleton-card" aria-hidden="true"></div>`)
@@ -401,7 +598,10 @@ function renderRepos() {
   if (filtered.length === 0) {
     grid.innerHTML = "";
     status.hidden = false;
-    status.textContent = "No matching public repositories found.";
+    status.innerHTML =
+      state.repos.length === 0
+        ? `Public repositories for <strong>@${escapeHtml(state.username)}</strong> will appear here automatically as they are published on <a href="https://github.com/${escapeHtml(state.username)}" target="_blank" rel="noopener noreferrer" class="repo-link">GitHub &nearr;</a>.`
+        : "No matching public repositories found.";
     return;
   }
 
@@ -432,7 +632,7 @@ function renderRepos() {
             </h3>
             <span class="repo-badge">${escapeHtml(updated)}</span>
           </div>
-          <p class="repo-desc">${escapeHtml(repo.description || "No description provided.")}</p>
+          <p class="repo-desc">${escapeHtml(repo.description || "Repository hosted on GitHub.")}</p>
           ${topicsHtml ? `<div class="repo-topics">${topicsHtml}</div>` : ""}
         </div>
 
@@ -444,7 +644,7 @@ function renderRepos() {
           <div class="repo-meta">
             <span class="repo-lang">
               <span class="lang-dot" style="background: ${langColor}"></span>
-              <span>${escapeHtml(repo.language || "Markdown")}</span>
+              <span>${escapeHtml(repo.language || "Web")}</span>
             </span>
             <div class="repo-counts">
               <span class="repo-count" title="Stars">&#9733; ${formatNumber(repo.stargazers_count)}</span>
@@ -458,7 +658,7 @@ function renderRepos() {
 }
 
 async function loadGitHubProfile(username) {
-  showSkeletons(6);
+  showSkeletons(3);
 
   try {
     const { user, repos } = await fetchGitHubData(username);
@@ -472,7 +672,7 @@ async function loadGitHubProfile(username) {
   } catch (err) {
     const status = $("projectsStatus");
     status.hidden = false;
-    status.textContent = `${err.message} Check your connection or visit GitHub directly.`;
+    status.textContent = `${err.message} You can still view repositories directly on GitHub.`;
     $("projectsGrid").innerHTML = "";
   }
 }
@@ -489,12 +689,76 @@ function initProjectControls() {
   });
 }
 
+function validateContactForm() {
+  const name = $("contactName").value.trim();
+  const email = $("contactEmail").value.trim();
+  const subject = $("contactSubject").value.trim();
+  const message = $("contactMessage").value.trim();
+
+  let valid = true;
+  $("errorName").textContent = "";
+  $("errorEmail").textContent = "";
+  $("errorSubject").textContent = "";
+  $("errorMessage").textContent = "";
+
+  if (name.length < 2) {
+    $("errorName").textContent = "Please enter your name (at least 2 characters).";
+    valid = false;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    $("errorEmail").textContent = "Please enter a valid email address.";
+    valid = false;
+  }
+  if (subject.length < 3) {
+    $("errorSubject").textContent = "Please enter a subject or project category.";
+    valid = false;
+  }
+  if (message.length < 10) {
+    $("errorMessage").textContent = "Please provide a brief description (at least 10 characters).";
+    valid = false;
+  }
+
+  return valid ? { name, email, subject, message } : null;
+}
+
+function initContactForm() {
+  const form = $("contactForm");
+  const status = $("formStatus");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    status.textContent = "";
+    const data = validateContactForm();
+    if (!data) return;
+
+    const mailSubject = encodeURIComponent(`[Portfolio Inquiry] ${data.subject}`);
+    const mailBody = encodeURIComponent(
+      `Name: ${data.name}\nEmail: ${data.email}\n\nProject Details:\n${data.message}`
+    );
+    window.location.href = `mailto:${PORTFOLIO_CONFIG.email}?subject=${mailSubject}&body=${mailBody}`;
+    status.textContent = "Opening your email client with your message details...";
+  });
+
+  $("sendWhatsappBtn").addEventListener("click", () => {
+    status.textContent = "";
+    const data = validateContactForm();
+    if (!data) return;
+
+    const text = encodeURIComponent(
+      `Hello Imtiaz,\n\nName: ${data.name}\nEmail: ${data.email}\nSubject: ${data.subject}\n\n${data.message}`
+    );
+    window.open(`https://wa.me/${PORTFOLIO_CONFIG.phone}?text=${text}`, "_blank", "noopener,noreferrer");
+    status.textContent = "Opening WhatsApp chat with your inquiry...";
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   initScrollEffects();
   initNavigation();
   renderStaticSections();
   initProjectControls();
+  initContactForm();
 
   const params = new URLSearchParams(window.location.search);
   const queryUser = params.get("user");

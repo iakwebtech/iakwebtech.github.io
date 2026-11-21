@@ -3,26 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>iakwebtech — Developer Portfolio</title>
-  <meta name="description" content="Developer portfolio of iakwebtech — full-stack web engineering, open-source projects, and technical expertise." />
+  <title>Imtiaz Alam Khan — Full Stack Web Developer | PHP &amp; Laravel Specialist</title>
+  <meta name="description" content="Imtiaz Alam Khan (iakwebtech) — Full Stack Web Developer with 12+ years of experience building scalable web applications, PHP & Laravel systems, E-commerce platforms, School ERPs, and SaaS products." />
+  <meta name="keywords" content="Imtiaz Alam Khan, iakwebtech, Full Stack Web Developer, PHP Developer, Laravel Specialist, CodeIgniter, Vue.js, React.js, School ERP, SaaS Development, Kolkata" />
+  <meta name="author" content="Imtiaz Alam Khan" />
   <meta name="theme-color" content="#0b0f19" />
   <link rel="canonical" href="https://iakwebtech.com/" />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://iakwebtech.com/" />
-  <meta property="og:title" content="iakwebtech — Developer Portfolio" />
-  <meta property="og:description" content="Full-stack web engineering, open-source projects, and technical expertise." />
+  <meta property="og:title" content="Imtiaz Alam Khan — Full Stack Web Developer | PHP & Laravel Specialist" />
+  <meta property="og:description" content="12+ years of experience building scalable web applications, business solutions, E-commerce platforms, and SaaS products." />
+  <meta property="og:image" content="https://iakwebtech.com/assets/images/profile.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Imtiaz Alam Khan — Full Stack Web Developer" />
+  <meta name="twitter:description" content="Building Scalable Web Applications, Business Solutions, E-commerce Platforms, and SaaS Products." />
 
-  <!-- Inline SVG Favicon (prevents 404 requests) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f19'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='26' fill='%236366f1'%3E%26lt;/%26gt;%3C/text%3E%3C/svg%3E" />
+  <!-- Inline SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f19'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='24' fill='%236366f1'%3EIAK%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261121" />
+  <script src="script.js?v=20261121" defer></script>
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -37,7 +42,10 @@
 
       <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
         <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#projects" class="nav-link">Solutions</a>
+        <a href="#github" class="nav-link">GitHub</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
@@ -71,46 +79,60 @@
         <div class="hero-content">
           <div class="status-pill" id="availabilityBadge">
             <span class="status-dot"></span>
-            <span id="availabilityText">Available for new opportunities</span>
+            <span id="availabilityText">12+ Years Experience &bull; Available for Projects</span>
           </div>
 
           <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text" id="heroName">iakwebtech</span>
+            Hi, I'm <span class="gradient-text" id="heroName">Imtiaz Alam Khan</span>
           </h1>
-          <p class="hero-subtitle" id="heroRole">Full-Stack Developer &amp; Open Source Contributor</p>
+          <p class="hero-subtitle" id="heroRole">Full Stack Web Developer | PHP &amp; Laravel Specialist</p>
           <p class="hero-bio" id="heroBio">
-            I design and build fast, accessible web applications, scalable APIs, and developer-friendly tools.
+            Building Scalable Web Applications, Business Solutions, E-commerce Platforms, and SaaS Products.
           </p>
+
+          <ul class="hero-highlights" id="heroHighlights">
+            <li>12+ Years of Web Development Experience</li>
+            <li>Backend &amp; Frontend Development</li>
+            <li>Custom Business Software Solutions</li>
+            <li>API &amp; Payment Gateway Integration</li>
+            <li>SaaS &amp; Enterprise Application Development</li>
+          </ul>
 
           <div class="hero-cta">
             <a href="#projects" class="btn btn-primary">
-              Explore Projects
+              View My Projects
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
-            <a href="https://github.com/iakwebtech" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="heroGithubLink">
+            <button type="button" class="btn btn-secondary" id="downloadResumeBtn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                <path d="M9 18c-4.51 2-5-2-7-2" />
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              GitHub Profile
-            </a>
-            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+              Download Resume
+            </button>
+            <a href="#contact" class="btn btn-secondary">Hire Me</a>
+            <a href="#contact" class="btn btn-ghost">Contact Me</a>
           </div>
 
           <div class="hero-stats" id="heroStats">
             <div class="stat-item">
+              <span class="stat-value">12+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
               <span class="stat-value" id="statRepos">--</span>
-              <span class="stat-label">Public Repos</span>
+              <span class="stat-label">GitHub Repos</span>
             </div>
             <div class="stat-item">
               <span class="stat-value" id="statFollowers">--</span>
-              <span class="stat-label">Followers</span>
+              <span class="stat-label">GitHub Followers</span>
             </div>
             <div class="stat-item">
               <span class="stat-value" id="statStars">--</span>
-              <span class="stat-label">Total Stars</span>
+              <span class="stat-label">GitHub Stars</span>
             </div>
           </div>
         </div>
@@ -120,63 +142,144 @@
             <div class="profile-avatar-wrap">
               <img
                 id="heroAvatar"
-                src="https://github.com/iakwebtech.png"
-                alt="iakwebtech GitHub avatar"
+                src="assets/images/profile.jpg"
+                alt="Imtiaz Alam Khan — Full Stack Web Developer"
                 width="148"
                 height="148"
                 loading="eager"
                 class="profile-avatar"
               />
             </div>
-            <div class="profile-meta">
-              <div class="profile-handle" id="heroHandle">@iakwebtech</div>
-              <div class="profile-location" id="heroLocation">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span id="locationText">Remote / Worldwide</span>
-              </div>
+            <div class="profile-name">Imtiaz Alam Khan</div>
+            <div class="profile-handle" id="heroHandle">@iakwebtech</div>
+            <div class="profile-location" id="heroLocation">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span id="locationText">Kolkata, West Bengal, India</span>
             </div>
-            <div class="profile-langs" id="topLanguages"></div>
+            <div class="profile-langs" id="topLanguages">
+              <span class="skill-chip">PHP</span>
+              <span class="skill-chip">Laravel</span>
+              <span class="skill-chip">Vue.js</span>
+              <span class="skill-chip">React.js</span>
+            </div>
+            <div class="profile-card-actions">
+              <a href="https://github.com/iakwebtech" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="heroGithubLink">
+                View GitHub Profile &nearr;
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About & Tech Stack -->
+    <!-- About Me Section -->
     <section class="section reveal" id="about">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">01 / About</span>
-          <h2 class="section-title">About Me &amp; Tech Stack</h2>
-          <p class="section-desc" id="aboutSummary">
-            Focused on turning complex requirements into clean, reliable, and high-performing web software.
-          </p>
+          <span class="section-eyebrow">01 / About Me</span>
+          <h2 class="section-title">Engineering Reliable Digital Products</h2>
         </div>
 
         <div class="about-grid">
           <div class="card about-card">
-            <h3>What I Focus On</h3>
-            <ul class="focus-list" id="focusList"></ul>
+            <h3>Professional Overview</h3>
+            <p class="about-paragraph">
+              I am an experienced Full Stack Web Developer with 12+ years of experience in designing, developing, and maintaining scalable web applications and business solutions. My expertise includes PHP, Laravel, CodeIgniter, Vue.js, React.js, RESTful APIs, payment gateway integration, and database-driven applications.
+            </p>
+            <p class="about-paragraph">
+              I specialize in developing custom software solutions, e-commerce platforms, School ERP systems, SaaS applications, POS systems, and business automation tools. I enjoy solving complex technical challenges and transforming business requirements into reliable, user-friendly digital products.
+            </p>
           </div>
 
-          <div class="card skills-card">
-            <h3>Core Technologies</h3>
-            <div class="skills-grid" id="skillsGrid"></div>
+          <div class="card profile-details-card">
+            <h3>Developer Snapshot</h3>
+            <dl class="snapshot-list">
+              <div class="snapshot-row">
+                <dt>Full Name</dt>
+                <dd>Imtiaz Alam Khan</dd>
+              </div>
+              <div class="snapshot-row">
+                <dt>Experience</dt>
+                <dd>12+ Years in Web Development</dd>
+              </div>
+              <div class="snapshot-row">
+                <dt>Primary Stack</dt>
+                <dd>PHP, Laravel, CodeIgniter, Vue.js, React.js, MySQL</dd>
+              </div>
+              <div class="snapshot-row">
+                <dt>Location</dt>
+                <dd>Kolkata, West Bengal, India (Remote Worldwide)</dd>
+              </div>
+              <div class="snapshot-row">
+                <dt>Website</dt>
+                <dd><a href="https://iakwebtech.com" target="_blank" rel="noopener noreferrer">iakwebtech.com</a></dd>
+              </div>
+              <div class="snapshot-row">
+                <dt>Email</dt>
+                <dd><a href="mailto:imtiazalam6701@gmail.com">imtiazalam6701@gmail.com</a></dd>
+              </div>
+            </dl>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GitHub Projects Section -->
+    <!-- Technical Skills & Expertise -->
+    <section class="section reveal" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">02 / Technical Skills</span>
+          <h2 class="section-title">Technical Skills &amp; Expertise</h2>
+          <p class="section-desc">
+            A comprehensive stack refined over 12+ years of building production business systems, APIs, and modern web interfaces.
+          </p>
+        </div>
+
+        <div class="skills-categories-grid" id="skillsCategoriesGrid"></div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section reveal" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">03 / Services</span>
+          <h2 class="section-title">What I Can Build For You</h2>
+          <p class="section-desc">
+            End-to-end full-stack engineering services tailored for startups, enterprises, and growing businesses.
+          </p>
+        </div>
+
+        <div class="services-grid" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- Solution Categories & Project Domains -->
     <section class="section reveal" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">04 / Solution Portfolio</span>
+          <h2 class="section-title">Core Solution Categories &amp; Architecture</h2>
+          <p class="section-desc">
+            Representative system architectures and domain solutions I design and build. Select any category to inquire or request a walkthrough.
+          </p>
+        </div>
+
+        <div class="solutions-grid" id="solutionsGrid"></div>
+      </div>
+    </section>
+
+    <!-- GitHub Integration Section -->
+    <section class="section reveal" id="github">
       <div class="container">
         <div class="section-header projects-header">
           <div>
-            <span class="section-eyebrow">02 / Repositories</span>
-            <h2 class="section-title">Featured GitHub Projects</h2>
-            <p class="section-desc">Live repositories fetched directly from GitHub with real-time filtering and sorting.</p>
+            <span class="section-eyebrow">05 / Open Source &amp; Code</span>
+            <h2 class="section-title">GitHub Profile &amp; Repositories</h2>
+            <p class="section-desc">Live public repositories and contribution activity fetched from GitHub.</p>
           </div>
 
           <div class="project-controls">
@@ -185,13 +288,34 @@
                 <circle cx="11" cy="11" r="8" />
                 <path d="m21 21-4.3-4.3" />
               </svg>
-              <input type="search" id="repoSearch" placeholder="Search projects..." aria-label="Search repositories" />
+              <input type="search" id="repoSearch" placeholder="Search repositories..." aria-label="Search repositories" />
             </div>
 
             <select id="repoSort" class="sort-select" aria-label="Sort repositories">
               <option value="stars">Sort: Most Stars</option>
               <option value="updated">Sort: Recently Updated</option>
             </select>
+          </div>
+        </div>
+
+        <div class="card github-activity-card" id="githubActivityCard">
+          <div class="github-activity-header">
+            <div>
+              <h3>GitHub Contribution Activity</h3>
+              <p class="section-desc">Public commit and repository activity for <code>@iakwebtech</code></p>
+            </div>
+            <a href="https://github.com/iakwebtech" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              Follow @iakwebtech &nearr;
+            </a>
+          </div>
+          <div class="github-chart-wrap" id="githubChartWrap">
+            <img
+              src="https://ghchart.rshah.org/6366f1/iakwebtech"
+              alt="GitHub contribution chart for iakwebtech"
+              loading="lazy"
+              class="github-chart-img"
+              id="githubChartImg"
+            />
           </div>
         </div>
 
@@ -209,37 +333,101 @@
       </div>
     </section>
 
-    <!-- Experience / Timeline -->
+    <!-- Professional Experience & Achievements -->
     <section class="section reveal" id="experience">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">03 / Journey</span>
-          <h2 class="section-title">Experience &amp; Highlights</h2>
-          <p class="section-desc">Key roles, technical milestones, and open-source contributions.</p>
+          <span class="section-eyebrow">06 / Experience &amp; Strengths</span>
+          <h2 class="section-title">Professional Experience &amp; Capabilities</h2>
+          <p class="section-desc">Core engineering areas honed over 12+ years of full-stack software development.</p>
         </div>
 
-        <div class="timeline" id="experienceTimeline"></div>
+        <div class="experience-grid" id="experienceGrid"></div>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section class="section reveal" id="contact">
       <div class="container">
-        <div class="card contact-card">
-          <div class="contact-content">
-            <span class="section-eyebrow">04 / Contact</span>
-            <h2 class="section-title">Let's Build Something Together</h2>
-            <p class="section-desc">
-              Have a project idea, freelance inquiry, or open-source collaboration in mind? Reach out directly.
-            </p>
-            <div class="contact-actions">
-              <a href="mailto:hello@iakwebtech.com" class="btn btn-primary" id="contactEmailBtn">Send an Email</a>
-              <button type="button" class="btn btn-secondary" id="copyEmailBtn">Copy Email</button>
+        <div class="section-header">
+          <span class="section-eyebrow">07 / Contact</span>
+          <h2 class="section-title">Let's Work Together</h2>
+          <p class="section-desc">
+            Looking for an experienced Full Stack Developer to build your next web application, ERP, E-commerce platform, or SaaS product? Let's connect.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="card contact-info-card">
+            <h3>Direct Contact Information</h3>
+            <div class="contact-items">
+              <div class="contact-item">
+                <span class="contact-label">Email</span>
+                <div class="contact-value-row">
+                  <a href="mailto:imtiazalam6701@gmail.com" class="contact-value">imtiazalam6701@gmail.com</a>
+                  <button type="button" class="btn btn-ghost btn-xs" id="copyEmailBtn">Copy</button>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-label">Phone / WhatsApp</span>
+                <div class="contact-value-row">
+                  <a href="tel:+917003578764" class="contact-value">+91 7003578764</a>
+                  <a href="https://wa.me/917003578764" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-xs">WhatsApp &nearr;</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-label">Website</span>
+                <a href="https://iakwebtech.com" target="_blank" rel="noopener noreferrer" class="contact-value">https://iakwebtech.com</a>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-label">Address</span>
+                <p class="contact-address">G-213, Battikal 2nd Lane, Garden Reach, Kolkata - 700024, West Bengal, India</p>
+              </div>
             </div>
+
             <p class="copy-feedback" id="copyFeedback" aria-live="polite"></p>
+
+            <div class="social-links" id="socialLinks"></div>
           </div>
 
-          <div class="social-links" id="socialLinks"></div>
+          <div class="card contact-form-card">
+            <h3>Send a Project Inquiry</h3>
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactName">Your Name</label>
+                  <input type="text" id="contactName" name="name" placeholder="John Doe" required minlength="2" />
+                  <span class="field-error" id="errorName"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail">Your Email</label>
+                  <input type="email" id="contactEmail" name="email" placeholder="john@company.com" required />
+                  <span class="field-error" id="errorEmail"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactSubject">Project Category / Subject</label>
+                <input type="text" id="contactSubject" name="subject" placeholder="e.g. Laravel SaaS Application / E-commerce Platform" required minlength="3" />
+                <span class="field-error" id="errorSubject"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage">Project Details</label>
+                <textarea id="contactMessage" name="message" rows="4" placeholder="Tell me about your requirements, timeline, and goals..." required minlength="10"></textarea>
+                <span class="field-error" id="errorMessage"></span>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Send via Email</button>
+                <button type="button" class="btn btn-secondary" id="sendWhatsappBtn">Send via WhatsApp</button>
+              </div>
+              <p class="form-status" id="formStatus" aria-live="polite"></p>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -247,7 +435,7 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="footerYear"></span> <span id="footerName">iakwebtech</span>. All rights reserved.</p>
+      <p>&copy; <span id="footerYear"></span> <span id="footerName">Imtiaz Alam Khan</span> (iakwebtech). All rights reserved.</p>
       <a href="#hero" class="back-to-top">Back to top &uarr;</a>
     </div>
   </footer>
